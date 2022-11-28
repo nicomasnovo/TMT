@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  server:
+    image: server
+    ports:
+      - '3000:3000'
+    build:
+      context: ./server
+    volumes:
+      - ./server:/usr/src
+    networks:
+      - app-tmt
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:3.6.19-xenial
+    ports:
+      - '27017:27017'
+    networks:
+      - app-tmt
+    volumes:
+      - mongo-data:/data/db
+  client:
+    image: client
+    ports:
+      - '3001:3001'
+    build:
+      context: ./client
+    volumes:
+      - ./client:/usr/src
+    networks:
+      - app-tmt
+networks:
+  app-tmt:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local
