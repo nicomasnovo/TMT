@@ -7,7 +7,7 @@ export default function Nav() {
       {links.map((link) => {
         const { name, url } = link;
         return (
-          <a href={url} className="nav-item">
+          <a key={name} href={url} className="nav-item">
             {name}
           </a>
         );
