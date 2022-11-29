@@ -1,0 +1,8 @@
+@use '@styles/abstracts/colors' as *;
+
+footer {
+  background-color: $mach-purple;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+}
