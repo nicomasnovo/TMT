@@ -1,5 +1,7 @@
+//Import necessary Model for this feature
 import User from '../models/user.js';
 
+//Controller to create user
 const createUser = (req, res) => {
   const body = req.body;
 
@@ -32,7 +34,7 @@ const createUser = (req, res) => {
       });
     });
 };
-
+//Controller to get all users
 const getUsers = async (req, res) => {
   await User.find({}, (err, users) => {
     if (err) {
@@ -44,7 +46,7 @@ const getUsers = async (req, res) => {
     return res.status(200).json({ success: true, data: users });
   }).catch((err) => console.log(err));
 };
-
+//Export controllers for your routes
 export default {
   createUser,
   getUsers,

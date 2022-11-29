@@ -1,12 +1,12 @@
+//Import required packages
 import express from 'express';
+//Import route controller (What this route is gonna excecute? Business logic maybe)
 import UsersCtrl from '../controllers/users.js';
-
+//Define express router
 const router = express.Router();
 
+//Define Routes for this Feature
 router.get('/users', UsersCtrl.getUsers);
-// router.get('/user/:id', UsersCtrl.getUsersById);
 router.post('/user', UsersCtrl.createUser);
-// router.put('/user/:id', UsersCtrl.updateUser);
-// router.delete('/user/:id', UsersCtrl.deleteUser);
-
+//export this feature routes
 export default router;
