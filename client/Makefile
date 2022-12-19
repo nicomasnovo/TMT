@@ -1,5 +1,5 @@
 build:
-	docker build -t client .
+	docker build -t tmt-client .
 
 run:
-	docker run -d -p 3001:3001 client
+	docker run -d -p 3001:3001 tmt-client

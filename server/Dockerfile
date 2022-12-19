@@ -11,7 +11,9 @@ COPY ./package-lock.json ./
 
 ADD . .
 
-RUN npm install
+RUN apt-get update || : && apt-get install python -y && \
+    npm install
+
 ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 4000

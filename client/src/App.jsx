@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Header from '@components/Header';
 import Footer from '@components/Footer';
+import Login from '@components/Login';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,6 +11,7 @@ function App() {
     // const data = {
     //   name: 'nicoa',
     //   email: 'nicolas.masnovo@bci.cl',
+    //   password: 'milanesas',
     // };
 
     // fetch('http://localhost:3000/api/user', {
@@ -29,7 +31,9 @@ function App() {
   return (
     <>
       <Header />
-      <main></main>
+      <main>
+        <Login />
+      </main>
       <Footer />
     </>
   );

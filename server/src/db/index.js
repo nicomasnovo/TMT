@@ -6,6 +6,7 @@ import config from '../../config/config.js';
 mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true }).catch((e) => {
   console.error('Connection error', e.message);
 });
+
 //This variable is just to simplify things
 const db = mongoose.connection;
 //Export DB conection

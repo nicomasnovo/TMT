@@ -3,13 +3,14 @@ version: '3.8'
 services:
   #Docker image for Server App linked to local files (don't loose nodemon hot reload)
   server:
-    image: server
+    image: tmt-server
     ports:
       - '3000:3000'
     build:
       context: ./server
     volumes:
       - ./server:/usr/src
+      - /usr/src/node_modules
     networks:
       - app-tmt
     depends_on:
@@ -25,7 +26,7 @@ services:
       - mongo-data:/data/db
   #Docker image for Client App linked to local files (don't loose vite hot reload)
   client:
-    image: client
+    image: tmt-client
     ports:
       - '3001:3001'
     build:

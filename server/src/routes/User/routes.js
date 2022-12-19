@@ -1,7 +1,7 @@
 //Import required packages
 import express from 'express';
 //Import route controller (What this route is gonna excecute? Business logic maybe)
-import UsersCtrl from '../controllers/users.js';
+import UsersCtrl from '../../controllers/users.js';
 //Define express router
 const router = express.Router();
 

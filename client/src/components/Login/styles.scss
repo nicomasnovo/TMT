@@ -1,0 +1,17 @@
+@use '@styles/abstracts/colors' as *;
+.login {
+  border: 1px solid $black;
+  border-radius: 8px;
+  padding: 8px;
+  max-width: 320px;
+  margin: 16px auto;
+  text-align: center;
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  .link{
+    color: $mach-purple;
+    cursor: pointer;
+  }
+}

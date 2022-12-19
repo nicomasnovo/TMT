@@ -6,7 +6,8 @@ import config from '../config/config.js';
 import db from './db/index.js';
 
 //Import endpoint routes
-import usersRouter from './routes/user-router.js';
+import usersRouter from './routes/User/routes.js';
+import loginRouter from './routes/Login/routes.js';
 
 //Define express app
 const app = express();
@@ -19,6 +20,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 //Apply imported routes
 app.use('/api', usersRouter);
+app.use('/api', loginRouter);
 //Healthcheck endpoint for App status checking
 app.use('/health-check', (req, res) => {
   res.send("It's Working");
